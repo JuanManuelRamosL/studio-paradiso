@@ -7,94 +7,79 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import Nav from "@/components/nav"
+
 
 export default function Page() {
   return (
     <div className="min-h-screen bg-black text-white">
+     <Nav></Nav>
       {/* Hero Section with Background Video */}
       <section className="relative h-screen">
-        <div className="absolute inset-0 overflow-hidden">
-          <video autoPlay muted loop playsInline className="w-full h-full object-cover">
-            <source
-              src="https://cdn.coverr.co/videos/coverr-aerial-view-of-a-beach-resort-2633/1080p.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <div className="absolute inset-0 bg-black/60" />
-        </div>
+    {/* Video background */}
+    <div className="absolute inset-0 overflow-hidden">
+  <iframe
+    width="100%"
+    height="100%"
+    src="https://www.youtube.com/embed/b6XpL7rCBKc?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&playsinline=1&fs=0&disablekb=1&cc_load_policy=0&iv_load_policy=3"
+    title="YouTube video player"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    referrerPolicy="strict-origin-when-cross-origin"
+    allowFullScreen
+  ></iframe>
+  <div className="absolute inset-0 bg-black/60" />
+</div>
 
+
+
+    {/* Content on top of video */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="relative container mx-auto px-4 h-full flex items-center"
+    >
+      <div className="flex flex-col md:flex-row items-center gap-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative container mx-auto px-4 h-full flex items-center"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <div className="flex flex-col md:flex-row items-center gap-8">
+          <Image
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBoQeEc0lQ8K1prrGD9UiowNsY_k2G4ytKHQ&s"
+            alt="Studio Paradiso Logo"
+            width={200}
+            height={200}
+            className="rounded-full border-2 border-[#C5B358]"
+          />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          className="space-y-4 text-center md:text-left"
+        >
+          <h1 className="text-4xl font-bold text-[#C5B358]">Studio Paradiso</h1>
+          <p className="text-xl text-gray-300">Primer canal de streaming de Viajes, Gastronomía y Estilo de Vida</p>
+          <div className="flex gap-4 justify-center md:justify-start">
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+              className="text-center"
             >
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Captura%20de%20pantalla%202025-02-23%20201906-sRS35XlASUs81aL0OPdlHKMoBC4uoN.png"
-                alt="Studio Paradiso Logo"
-                width={200}
-                height={200}
-                className="rounded-full border-2 border-[#C5B358]"
-              />
+           
             </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="space-y-4 text-center md:text-left"
-            >
-              <h1 className="text-4xl font-bold text-[#C5B358]">Studio Paradiso</h1>
-              <p className="text-xl text-gray-300">Primer canal de streaming de Viajes, Gastronomía y Estilo de Vida</p>
-              <div className="flex gap-4 justify-center md:justify-start">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6, duration: 0.5 }}
-                  className="text-center"
-                >
-                  <div className="text-2xl font-bold">6037</div>
-                  <div className="text-sm text-gray-400">Seguidores</div>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.7, duration: 0.5 }}
-                  className="text-center"
-                >
-                  <div className="text-2xl font-bold">40</div>
-                  <div className="text-sm text-gray-400">Videos</div>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8, duration: 0.5 }}
-                  className="text-center"
-                >
-                  <div className="text-2xl font-bold">84</div>
-                  <div className="text-sm text-gray-400">Siguiendo</div>
-                </motion.div>
-              </div>
-            </motion.div>
+            {/* Add other statistics or actions if needed */}
           </div>
         </motion.div>
+      </div>
+    </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        >
-          <div className="animate-bounce">
-            <div className="w-6 h-6 border-2 border-white border-t-0 border-l-0 rotate-45 -translate-y-2"></div>
-          </div>
-        </motion.div>
-      </section>
+    {/* Scroll Indicator */}
+  
+  </section>
 
       {/* Content Tabs */}
       <motion.div
@@ -124,7 +109,7 @@ export default function Page() {
                       <iframe
                         width="100%"
                         height="100%"
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        src="https://www.youtube.com/embed/hCcvFHSm7vM?si=AMGpwhnOrKKvU0lv"
                         title="YouTube video"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
