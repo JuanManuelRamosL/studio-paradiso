@@ -25,3 +25,31 @@
   background-color: #584b03;
   color: black;
 }
+
+.tab-trigger {
+  display: flex;
+  align-items: center; /* Alinea el ícono y el texto verticalmente */
+  gap: 8px; /* Espacio entre el ícono y el texto */
+  font-size: 1rem;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-trigger .icon {
+  font-size: 1.2rem; /* Tamaño del ícono */
+  color: #c5b358; /* Color dorado para los íconos */
+}
+
+.tab-trigger:hover {
+  background-color: rgba(
+    197,
+    179,
+    88,
+    0.1
+  ); /* Fondo dorado suave al hacer hover */
+}
+
+.tab-trigger:hover .icon {
+  color: #ffffff; /* Cambia el color del ícono al hacer hover */
+}

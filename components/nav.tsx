@@ -1,10 +1,22 @@
+import React, { useState } from "react";
 import "./nav.css"; // Importa los estilos CSS
 
 export default function Nav() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav>
       <div className="logo">Studio Paradiso</div>
-      <ul>
+      <div className="hamburger" onClick={toggleMenu}>
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
+      </div>
+      <ul className={isMenuOpen ? "open" : ""}>
         <li>
           <a href="#inicio">Inicio</a>
         </li>
