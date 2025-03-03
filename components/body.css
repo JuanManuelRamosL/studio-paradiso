@@ -1,0 +1,27 @@
+.tabs-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: black;
+
+  border: 1px solid #ffd700;
+  border-radius: 10px;
+}
+
+.tab-trigger {
+  color: #686700;
+  font-size: 18px;
+  font-weight: bold;
+
+  text-align: center;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.tab-trigger:hover {
+  background-color: #584b03;
+  color: black;
+}

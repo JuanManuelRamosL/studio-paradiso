@@ -1,0 +1,82 @@
+/* nav.css */
+nav {
+  background: linear-gradient(
+    to right,
+    #000000,
+    #1a1a1a
+  ); /* Fondo con degradado */
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #c5b358; /* Línea dorada */
+  box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.2); /* Sutil sombra dorada */
+}
+
+nav .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #c5b358; /* Dorado */
+  text-shadow: 0 0 4px rgba(255, 215, 0, 0.8);
+}
+
+nav ul {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efecto Hover con subrayado dorado */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #c5b358;
+  left: 50%;
+  bottom: -5px;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Efecto Hover con color dorado */
+nav ul li a:hover {
+  color: #c5b358;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.6);
+}
+
+/* 🎯 Modo Responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+    padding: 12px;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 10px;
+  }
+}
